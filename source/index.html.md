@@ -554,3 +554,79 @@ Parameter | Description
 `url` | (Either) The URL of the image
 `image` | (Either) The file of the image
 
+
+# Usage
+
+## Retrieve your API usage summary
+
+```shell
+curl "http://api.threadgenius.co/v0/usage" \
+  -X GET \
+  -H 'Authorization: Bearer PKmWwSGYF4szvyY7' \
+```
+
+> Example Response:
+
+```json
+{
+  "status": {
+    "message": "OK",
+    "code": 200
+  },
+  "usage": {
+    "2017-1": {
+      "catalog_index": {
+        "num_calls": 2,
+        "num_images": 1000
+      },
+      "search": {
+        "num_calls": 11,
+        "num_images": 11
+      },
+      "detect": {
+        "num_calls": 1,
+        "num_images": 1
+      },
+      "tag": {
+        "num_calls": 7,
+        "num_images": 7
+      },
+      "catalog_upload": {
+        "num_calls": 8,
+        "num_images": 4000
+      }
+    },
+    "2016-12": {
+      "catalog_index": {
+        "num_calls": 10,
+        "num_images": 518
+      },
+      "search": {
+        "num_calls": 60,
+        "num_images": 60
+      },
+      "tag": {
+        "num_calls": 11,
+        "num_images": 11
+      },
+      "detect": {
+        "num_calls": 3,
+        "num_images": 3
+      },
+      "catalog_upload": {
+        "num_calls": 18,
+        "num_images": 3023
+      }
+    }
+  }
+}
+```
+
+This endpoint returns your API usage summary
+
+### HTTP Request
+
+`POST http://api.threadgenius.co/v0/usage/`
+
+
+
